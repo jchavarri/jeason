@@ -13,5 +13,8 @@
     "start": "./jeason.sh ./test.js",
     "getReasonAst": "refmt --print ast ./getReasonAst.re",
     "postinstall": "npm run build"
+  },
+  "devDependencies": {
+    "bs-platform": "^2.2.3"
   }
 }

@@ -1,4 +1,4 @@
-(**
+(* (**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
  *
@@ -97,4 +97,4 @@ let parse content options =
     |] in
     Js.Unsafe.set e "name" ((Js.string "Parse Error"));
     ignore (throw e);
-    Js.Unsafe.obj [||]
+    Js.Unsafe.obj [||] *)

@@ -1930,10 +1930,10 @@ let cat = (filename) => {
 };
 
 let () =
-  if (Array.length(Sys.argv) != 2) {
+  if (Array.length(Sys.argv) != 3) {
     raise(Invalid_argument("Please provide as argument the JS file to convert over."))
   } else {
-    let file = Sys.argv[1];
+    let file = Sys.argv[2];
     let parse_options =
       Some(
         Parser_env.{
@@ -1950,13 +1950,15 @@ let () =
           use_strict: false
         }
       );
-    let content = cat(file);
+    let content = Node.Fs.readFileAsUtf8Sync(file);
     let (ast, _) =
       Parser_flow.program_file(~fail=false, ~parse_options, content, Some(Loc.SourceFile(file)));
     let (_, statements, _) = ast;
-    output_string(stdout, Config.ast_impl_magic_number);
+    /* output_string(stdout, Config.ast_impl_magic_number); */
     output_value(stdout, file);
+    /* Js.log(Js.Json.stringifyAny(file)); */
     let result: Parsetree.structure =
       statements |> List.map((statementWrap) => topStatementsMapper(statementWrap)) |> List.concat;
+    /* Js.log(Js.Json.stringifyAny(result)); */
     output_value(stdout, result)
   };

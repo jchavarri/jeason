@@ -1,0 +1,29 @@
+{
+  "name": "jeason",
+  "version": "0.35.0",
+  "generators": [
+    {
+      "name": "ocamllex",
+      "command": "ocamllex $in"
+    }
+  ],
+  "sources": {
+    "dir": "src",
+    "generators": [
+      {
+        "name": "ocamllex",
+        "edge": ["lexer_flow.ml", ":", "lexer_flow.mll"]
+      }
+    ]
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "warnings": {
+    "error": "+101"
+  },
+  "namespace": true,
+  "refmt": 3
+}
