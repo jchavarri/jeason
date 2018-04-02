@@ -1,0 +1,1 @@
+let standard_library = "/Users/javi/Development/github/bucklescript/vendor/ocaml/lib/ocaml"
