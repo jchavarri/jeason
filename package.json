@@ -9,12 +9,12 @@
     "jeason": "./jeason.sh"
   },
   "scripts": {
-    "build": "rm -rf ./_build && mkdir -p ./_build && rebuild -no-links -package compiler-libs.common ./main.native",
+    "build": "rm -rf ./_build && mkdir -p ./_build && rebuild -no-links -package compiler-libs.common ./src/main.native",
     "start": "./jeason.sh ./test.js",
     "getReasonAst": "refmt --print ast ./getReasonAst.re",
     "postinstall": "npm run build"
   },
   "devDependencies": {
-    "bs-platform": "^2.2.3"
+    "bs-platform": "^3.0.0"
   }
 }

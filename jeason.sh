@@ -23,4 +23,4 @@ SCRIPTDIR="$( cd -P "$( dirname "$THISSCRIPT" )" && pwd )"
 
 SOURCE=$(pwd)/$1
 
-cd $SCRIPTDIR; ./_build/main.native $SOURCE | refmt --parse binary --print re
+cd $SCRIPTDIR; ./_build/src/main.native $SOURCE | refmt --parse binary --print re
